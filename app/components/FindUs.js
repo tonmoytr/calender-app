@@ -1,4 +1,6 @@
 import { Libre_Caslon_Text } from "next/font/google";
+import map from "../../public/assets/map.png";
+import Image from "next/image";
 
 const libreCaslon = Libre_Caslon_Text({
   subsets: ["latin"],
@@ -9,7 +11,7 @@ const libreCaslon = Libre_Caslon_Text({
 export default function FindUs() {
   return (
     <div className="text-center">
-      <div>
+      <div className="my-16 ">
         <h1 className={`${libreCaslon.className} text-5xl mb-2`}>
           Where to <span className="text-red-500">Find Us</span>
         </h1>
@@ -18,14 +20,20 @@ export default function FindUs() {
           soon!
         </p>
       </div>
-      <div className="bg-black">
+      <div className="bg-black rounded-[100px] flex gap-3 items-center">
         <div>
-            {/* map/ left side content */}
-            
+          {/* map/ left side content */}
+          <figure>
+            <Image
+              className="rounded-[100px]"
+              src={map}
+              width={600}
+              height="full"
+              alt="map image"
+            />
+          </figure>
         </div>
-        <div>
-            {/* right side content. */}
-        </div>
+        <div>{/* right side content. */}</div>
       </div>
     </div>
   );
