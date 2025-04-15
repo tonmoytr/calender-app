@@ -37,7 +37,6 @@ export default function FindUs() {
         <div className="w-[35%]">
           {/* right side content. */}
           <Cape></Cape>
-          <Cape></Cape>
         </div>
       </div>
     </div>
