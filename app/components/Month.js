@@ -20,8 +20,8 @@ export default function Month() {
   const handleClick = (day, e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setModalStyle({
-      top: rect.top + window.scrollY + "px",
-      left: rect.left + window.scrollX + "px",
+      top: `${rect.top}px`,
+      left: `${rect.left}px`,
       position: "absolute",
     });
     setSelectedDay(day);
@@ -74,7 +74,7 @@ export default function Month() {
       {selectedDay && (
         <div
           style={modalStyle}
-          className="bg-white border rounded-xl shadow-lg p-4 w-60 z-50"
+          className="bg-black border rounded-xl shadow-lg p-4 w-60 z-50"
         >
           <div className="flex justify-between items-center mb-2">
             <div className="text-lg font-bold">Date {selectedDay.date}</div>
