@@ -71,38 +71,42 @@ export default function Month() {
 
       {/* Modal */}
       {selectedDay && (
-        <div
-          style={modalStyle}
-          className="flex flex-col justify-between bg-black min-h-[30vh] border rounded-xl shadow-lg p-4 w-60 z-50"
-        >
-          <div className="flex justify-between items-center mb-2">
-            <div className="text-lg font-bold">Date {selectedDay.date}</div>
-            <button
-              onClick={closeModal}
-              className="text-gray-600 hover:text-black"
-            >
-              ✕
-            </button>
-          </div>
-          <div className="flex flex-col gap-2">
-            {selectedDay.event_count === 0 ? (
-              <div className="border border-gray-300 text-gray-500 text-sm px-5 py-6 rounded-2xl text-center flex items-center justify-center h-32">
-                No events on this date.
-              </div>
-            ) : (
-              <>
-                {selectedDay.events.morning && (
-                  <div className="border border-green-600 text-md px-5 py-3 rounded-2xl text-center mb-2">
-                    {selectedDay.events.morning}
-                  </div>
-                )}
-                {selectedDay.events.evening && (
-                  <div className="border border-red-600 text-md px-5 py-3 rounded-2xl text-center mb-2">
-                    {selectedDay.events.evening}
-                  </div>
-                )}
-              </>
-            )}
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 ">
+          <div className="bg-black border border-gray-700 rounded-xl shadow-xl w-[90%] min-h-[30vh] flex flex-col justify-between gap-10 max-w-sm p-5">
+            {/* Header */}
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-bold text-white">
+                Date {selectedDay.date}
+              </h2>
+              <button
+                onClick={closeModal}
+                className="text-gray-400 hover:text-white text-xl"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="flex flex-col gap-3">
+              {selectedDay.event_count === 0 ? (
+                <div className="border border-gray-600 text-gray-400 text-sm px-5 py-6 rounded-2xl text-center">
+                  No events on this date.
+                </div>
+              ) : (
+                <>
+                  {selectedDay.events.morning && (
+                    <div className="border border-green-600 text-md px-5 py-3 rounded-2xl text-center">
+                      {selectedDay.events.morning}
+                    </div>
+                  )}
+                  {selectedDay.events.evening && (
+                    <div className="border border-red-600 text-md px-5 py-3 rounded-2xl text-center">
+                      {selectedDay.events.evening}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}

@@ -34,7 +34,7 @@ export default function MonthDropdown() {
         className="border rounded-2xl flex justify-between items-center px-7 py-3 cursor-pointer"
       >
         <p>{selectedMonth}</p>
-        <FaChevronDown className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gray-300" />
+        <FaChevronDown className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 text-gray-300" />
       </div>
 
       {isOpen && (
