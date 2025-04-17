@@ -11,32 +11,34 @@ const libreCaslon = Libre_Caslon_Text({
 
 export default function FindUs() {
   return (
-    <div className="text-center">
-      <div className="my-16 ">
-        <h1 className={`${libreCaslon.className} text-5xl mb-2`}>
+    <div className="text-center px-4 sm:px-8 md:px-12 lg:px-24">
+      <div className="my-16">
+        <h1
+          className={`${libreCaslon.className} text-3xl sm:text-4xl md:text-5xl mb-4`}
+        >
           Where to <span className="text-red-500">Find Us</span>
         </h1>
-        <p className="text-md font-semibold">
+        <p className="text-sm sm:text-base font-semibold text-gray-300">
           Currently serving Cape Canaveral and Patrick SFB with plans to expand
           soon!
         </p>
       </div>
-      <div className="bg-black rounded-[100px] flex gap-3 items-center">
-        <div className="w-[60%]">
-          {/* map/ left side content */}
+
+      <div className="bg-black rounded-[100px]  flex flex-col lg:flex-row gap-10 items-center">
+        {/* Map Section */}
+        <div className="w-full lg:w-2/3">
           <figure>
             <Image
-              className="rounded-[100px]"
+              className="rounded-[100px] w-full h-auto object-cover"
               src={map}
-              width="full"
-              height="full"
               alt="map image"
             />
           </figure>
         </div>
-        <div className="w-[35%]">
-          {/* right side content. */}
-          <Cape></Cape>
+
+        {/* Cape Component */}
+        <div className="w-full lg:w-1/3">
+          <Cape />
         </div>
       </div>
     </div>
