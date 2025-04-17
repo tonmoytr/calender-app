@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.inherit-radius {
+  border-radius: inherit;
+}
+
 /* 
 :root {
   --background: #ffffff;
